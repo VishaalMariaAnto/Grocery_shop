@@ -352,10 +352,12 @@ app.get('/feedback', async (req, res) => {
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
     const user = await models.Users.findOne({ email });
+
     if (!user) {
         return res.status(401).json({ message: 'Invalid email or password' });
     }
-    const isAdmin = email == 'virat@gmail.com' && password == 'virat@1234';
+    const isAdmin = email == 'admin' && password == 'admin';
+
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
         return res.status(401).json({ message: 'Invalid email or password' });

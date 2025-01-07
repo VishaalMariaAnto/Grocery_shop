@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 // Middleware
 require("dotenv").config();
-const db = process.env.MONGO_URL;
+const db = "mongodb+srv://feby:feby@cluster0.5e0jv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 // Connect to MongoDB using the connection string
 
